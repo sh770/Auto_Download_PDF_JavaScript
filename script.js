@@ -7,8 +7,7 @@ window.onload = ()=> {
 let DownloadFile = (fileName)=> {
     //Set the File URL.
     let url = "https://www.africau.edu/images/default/" + fileName;
-    console.log(url)
-
+    
     //Create XMLHTTP Request.
     let req = new XMLHttpRequest();
     req.open("GET", url, true);
@@ -34,6 +33,7 @@ let DownloadFile = (fileName)=> {
     };
     req.send();
 };
+console.log(url)
 
 
 // document.location.href = "https://www.africau.edu/images/default/sample.pdf" ; 
