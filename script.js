@@ -6,7 +6,7 @@ window.onload = ()=> {
 
 let DownloadFile = (fileName)=> {
     //Set the File URL.
-    let url = "http://www.africau.edu/images/default/" + fileName;
+    let url = "https://www.africau.edu/images/default/" + fileName;
 
     //Create XMLHTTP Request.
     let req = new XMLHttpRequest();
@@ -35,7 +35,7 @@ let DownloadFile = (fileName)=> {
 };
 
 
-// document.location.href = "http://www.africau.edu/images/default/sample.pdf" ; 
+// document.location.href = "https://www.africau.edu/images/default/sample.pdf" ; 
 
 
 //alert('Wanna pizza joke?\n Nevermind, it\’s \ntoo cheesy!')
