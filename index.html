@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <title>55</title>
+
+
+    <script>
+        window.onload = function () {
+            setTimeout(function () {
+                DownloadFile("sample.pdf");
+            }, 15000);
+        };
+        function DownloadFile(fileName) {
+            //Set the File URL.
+            var url = "http://www.africau.edu/images/default/" + fileName;
+
+            //Create XMLHTTP Request.
+            var req = new XMLHttpRequest();
+            req.open("GET", url, true);
+            req.responseType = "blob";
+            req.onload = function () {
+                //Convert the Byte Data to BLOB object.
+                var blob = new Blob([req.response], { type: "application/octetstream" });
+
+                //Check the Browser type and download the File.
+                var isIE = false || !!document.documentMode;
+                if (isIE) {
+                    window.navigator.msSaveBlob(blob, fileName);
+                } else {
+                    var url = window.URL || window.webkitURL;
+                    link = url.createObjectURL(blob);
+                    var a = document.createElement("a");
+                    a.setAttribute("download", fileName);
+                    a.setAttribute("href", link);
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                }
+            };
+            req.send();
+        };
+
+    </script>
+
+    <!-- <script> document.location.href = "http://www.africau.edu/images/default/sample.pdf" ; </script> -->
+
+    <style>
+        body {
+            background-color: black;
+            color: aquamarine;
+        }
+
+        .container {
+            /* 
+            display: grid;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            */
+
+            text-align: center;
+        }
+    </style>
+    <!-- <script>alert('Wanna pizza joke?\n Nevermind, it\’s \ntoo cheesy!')</script> -->
+    <!-- <script>alert(1)</script> -->
+</head>
+
+<body>
+    <div class="container">
+        <h1>הדף יוריד קובץ PDF </h1>
+        <h2>באופן אוטומטי אחרי המתנה קצרה</h2>
+        <img src="https://s3.eu-west-1.amazonaws.com/data.cyber.org.il/virtual_courses/websec/chapter_3/graphics/free_drinks.png"
+            alt="Free Drinks!" width="50%">
+    </div>
+
+</body>
+
+</html>
