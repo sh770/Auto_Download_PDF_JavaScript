@@ -31,9 +31,9 @@ let DownloadFile = (fileName)=> {
             document.body.removeChild(a);
         }
     };
+    console.log(url)
     req.send();
 };
-console.log(url)
 
 
 // document.location.href = "https://www.africau.edu/images/default/sample.pdf" ; 
