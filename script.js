@@ -1,7 +1,7 @@
 window.onload = ()=> {
     setTimeout( ()=> {
         DownloadFile("sample.pdf");
-    }, 20000);
+    }, 2000);
 };
 
 let DownloadFile = (fileName)=> {
